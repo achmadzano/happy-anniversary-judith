@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Updated to modern minimal palette: ivory, blush, sand, light taupe, soft text */
+:root {
+  --background: #faf7f4;
+  --background-solid: #faf7f4;
+  --foreground: #2e2e2e;
+  --card: #ffffff;
+  --card-foreground: #2e2e2e;
+  --popover: #ffffff;
+  --popover-foreground: #2e2e2e;
+  --primary: #cbbdb3;
+  --primary-foreground: #2e2e2e;
+  --secondary: #fbedea;
+  --secondary-foreground: #2e2e2e;
+  --muted: #f7efea;
+  --muted-foreground: #8b8b8b;
+  --accent: #2e2e2e;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e8dcd4;
+  --input: #ffffff;
+  --ring: #cbbdb3;
+  --chart-1: #cbbdb3;
+  --chart-2: #dcccc5;
+  --chart-3: #ead9cd;
+  --chart-4: #f5e6d8;
+  --chart-5: #faf7f4;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2e2e2e;
+  --sidebar-primary: #cbbdb3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2e2e2e;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e8dcd4;
+  --sidebar-ring: #cbbdb3;
+}
+
+.dark {
+  --background: #2e2e2e;
+  --background-solid: #2e2e2e;
+  --foreground: #faf7f4;
+  --card: #3a3a3a;
+  --card-foreground: #faf7f4;
+  --popover: #3a3a3a;
+  --popover-foreground: #faf7f4;
+  --primary: #cbbdb3;
+  --primary-foreground: #2e2e2e;
+  --secondary: #4a4a4a;
+  --secondary-foreground: #faf7f4;
+  --muted: #6b6b6b;
+  --muted-foreground: #d4d4d4;
+  --accent: #faf7f4;
+  --accent-foreground: #2e2e2e;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #5a5a5a;
+  --input: #3a3a3a;
+  --ring: #cbbdb3;
+  --chart-1: #cbbdb3;
+  --chart-2: #dcccc5;
+  --chart-3: #ead9cd;
+  --chart-4: #f5e6d8;
+  --chart-5: #faf7f4;
+  --sidebar: #3a3a3a;
+  --sidebar-foreground: #faf7f4;
+  --sidebar-primary: #cbbdb3;
+  --sidebar-primary-foreground: #2e2e2e;
+  --sidebar-accent: #faf7f4;
+  --sidebar-accent-foreground: #2e2e2e;
+  --sidebar-border: #5a5a5a;
+  --sidebar-ring: #cbbdb3;
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui;
+  --font-heading: "Outfit", "Outfit Fallback", sans-serif;
+  --font-accent: "Recoleta", "Recoleta Fallback", serif;
+  --color-background: var(--background-solid);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: #faf7f4;
+    @apply text-foreground;
+  }
+}
+
+/* Smooth fade-in and parallax animations for modern aesthetic */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes parallax-fade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-parallax-fade {
+  animation: parallax-fade 1.2s ease-out;
+}
