@@ -1,17 +1,16 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import type { HTMLBlockquoteElement } from "react"
 
 export default function Closing() {
-  const quoteRef = useRef<HTMLBlockquoteElement>(null)
+  const quoteRef = useRef<HTMLQuoteElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.target === quoteRef.current) {
-            entry.target.style.animation = "parallax-fade 1.2s ease-out"
+          if (entry.isIntersecting && quoteRef.current) {
+            quoteRef.current.style.animation = "parallax-fade 1.2s ease-out"
           }
         })
       },
